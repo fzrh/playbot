@@ -26,9 +26,7 @@ bot = ChatBot(
 
 # Train based on the english corpus
 bot.train(
-    'chatterbot.corpus.english',
-    'chatterbot.corpus.english.greetings',
-    'chatterbot.corpus.english.conversations'
+    'chatterbot.corpus.english'
 )
 
 bot.set_trainer(ListTrainer)
