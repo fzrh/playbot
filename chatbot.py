@@ -29,7 +29,8 @@ bot = ChatBot(
 
 # Train based on the english corpus
 bot.train(
-    'chatterbot.corpus.english'
+    'chatterbot.corpus.english',
+    './data/custom.corpus.json'
 )
 
 bot.set_trainer(ListTrainer)
