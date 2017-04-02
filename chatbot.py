@@ -2,6 +2,7 @@
 
 import logging
 from chatterbot import ChatBot
+from chatterbot.trainers import ListTrainer
 
 __author__ = 'faezrah'
 
@@ -29,6 +30,13 @@ bot.train(
     'chatterbot.corpus.english.greetings',
     'chatterbot.corpus.english.conversations'
 )
+
+bot.set_trainer(ListTrainer)
+
+bot.train([
+    'What is your name?',
+    'My name is Norman',
+])
 
 print('Type something to begin...')
 
