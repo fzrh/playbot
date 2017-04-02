@@ -15,13 +15,14 @@ bot = ChatBot(
     storage_adapter='chatterbot.storage.JsonFileStorageAdapter',
     input_adapter='chatterbot.input.TerminalAdapter',
     output_adapter='chatterbot.output.TerminalAdapter',
-    logic_adapters=[
-        'chatterbot.logic.BestMatch',
-    ],
+    # logic_adapters=[
+    #     'chatterbot.logic.BestMatch',
+    # ],
     filters=[
         'chatterbot.filters.RepetitiveResponseFilter'
     ],
-    database='./database.json'
+    database='./database.json',
+    read_only=False
 )
 
 # Train based on the english corpus
