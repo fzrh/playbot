@@ -17,8 +17,7 @@ bot = ChatBot(
     output_adapter='chatterbot.output.TerminalAdapter',
     logic_adapters=[
         'chatterbot.logic.BestMatch',
-        'chatterbot.logic.TimeLogicAdapter',
-        'chatterbot.logic.MathematicalEvaluation'
+        'chatterbot.logic.LowConfidenceAdapter'
     ],
     filters=[
         'chatterbot.filters.RepetitiveResponseFilter'
