@@ -7,7 +7,7 @@ from chatterbot.trainers import ListTrainer
 __author__ = 'faezrah'
 
 # Uncomment the following line to enable verbose logging
-# logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO)
 
 bot = ChatBot(
     'Norman',
@@ -15,9 +15,11 @@ bot = ChatBot(
     storage_adapter='chatterbot.storage.JsonFileStorageAdapter',
     input_adapter='chatterbot.input.TerminalAdapter',
     output_adapter='chatterbot.output.TerminalAdapter',
-    # logic_adapters=[
-    #     'chatterbot.logic.BestMatch',
-    # ],
+    logic_adapters=[
+        'chatterbot.logic.BestMatch',
+        'chatterbot.logic.TimeLogicAdapter',
+        'chatterbot.logic.MathematicalEvaluation'
+    ],
     filters=[
         'chatterbot.filters.RepetitiveResponseFilter'
     ],
@@ -37,7 +39,7 @@ bot.train([
     'My name is Norman',
 ])
 
-print('Type something to begin...')
+print('Type something to begin ...')
 
 # The following loop will execute each time the user enters input
 while True:
